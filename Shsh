@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKO HAMKOR - Ishonchli Hamkoringiz!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS USLUBLARI (DIZAYN) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --dark-color: #1e293b;
+            --light-color: #f8f9fa;
+            --text-color: #334155;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navbar */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo h2 {
+            color: var(--dark-color);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-nav {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        .btn-nav:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px 0;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            color: var(--dark-color);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+
+        .btn-secondary {
+            background-color: #24292e;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .animated-card {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,123,255,0.2);
+            animation: float 4s ease-in-out infinite;
+            width: 280px;
+        }
+
+        .animated-card i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-color);
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+
+        .icon-box {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-inner {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px;
+            border-radius: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background-color: #ffffff;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .btn-telegram {
+            background-color: #0088cc;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .btn-telegram:hover {
+            background-color: #006699;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Telefonlar uchun moslashuvchanlik (Responsive) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+                flex-direction: column;
+            }
+            
+            .about-inner {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <h2>AKO HAMKOR</h2>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Bosh sahifa</a></li>
+                    <li><a href="#services">Xizmatlar</a></li>
+                    <li><a href="#about">Biz haqimizda</a></li>
+                    <li><a href="#contact" class="btn-nav">Bog'lanish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>AKO HAMKOR — <br><span class="highlight">Ishonchli hamkoringiz!</span></h1>
+                <p>Biznesingiz va hujjatlaringiz uchun professional kompyuter xizmatlari, rasmiy hisobotlar tayyorlash va raqamli konsalting.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Xizmatlar bilan tanishish</a>
+                    <a href="https://t.me/your_telegram_username" target="_blank" class="btn btn-secondary"><i class="fab fa-telegram"></i> Telegramda yozish</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="animated-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>AKO HAMKOR</h3>
+                    <p>Kompyuter Xizmatlari</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bizning Xizmatlar</h2>
+                <p>Sizga yuqori sifatli va tezkor raqamli xizmatlarni taklif etamiz</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-file-word"></i></div>
+                    <h3>Hujjatlar yaratish</h3>
+                    <p>Har qanday turdagi rasmiy hujjatlar, shartnomalar va arizalarni qisqa muddatda professional tayyorlash.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                    <h3>Rasmiy hisobotlar</h3>
+                    <p>Tadbirkorlar va korxonalar uchun hisobotlar, taqdimotlar va tahliliy hujjatlarni shakllantirish.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box"><i class="fas fa-user-tie"></i></div>
+                    <h3>Raqamli konsalting</h3>
+                    <p>Biznesni raqamlashtirish, kompyuter dasturlari va hujjatlar bilan to'g'ri ishlash bo'yicha professional maslahatlar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-inner">
+            <div class="about-text">
+                <h2>Biz Haqimizda</h2>
+                <p>AKO HAMKOR — bu mijozlar ishonchini birinchi o'ringa qo'yadigan kompyuter xizmatlari va raqamli konsalting markazidir. Biz sizning vaqtingizni tejash va ishlaringizni osonlashtirish uchun professional va tezkor yondashuvdan foydalanamiz.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Ishonchli natija</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Tezkor</h3>
+                        <p>Xizmat ko'rsatish</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Biz bilan bog'laning</h2>
+                <p>Savollaringiz bormi? Bizga to'g'ridan-to'g'ri aloqaga chiqing va bepul konsaltingga ega bo'ling.</p>
+                <a href="https://t.me/your_telegram_username" target="_blank" class="btn btn-telegram"><i class="fab fa-telegram"></i> Telegram orqali bog'lanish</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AKO HAMKOR. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.padding = '5px 0';
+                    header.style.backgroundColor = '#ffffff';
+                } else {
+                    header.style.padding = '20px 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

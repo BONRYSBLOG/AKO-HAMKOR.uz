@@ -31,7 +31,7 @@ Aktam Oʻrinov
 Agar savollaringiz boʻlsa yoki hamkorlik qilishni xohlasangiz, quyidagi usullardan foydalanishingiz mumkin:
 
 - Email: aktamorinov66@gmail.com
-- Telegram: [@YourName](https://t.me/Urinov_murojaatbot)
+- Telegram: [@urinov](https://t.me/Urinov_murojaatbot)
 
 ---
 
